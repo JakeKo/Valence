@@ -16,7 +16,5 @@
     "url": "https://github.com/JakeKo/Valence/issues"
   },
   "homepage": "https://github.com/JakeKo/Valence/Dashboard#readme",
-  "dependencies": {
-    "electron": "^1.7.10"
-  }
+  "dependencies": {}
 }
