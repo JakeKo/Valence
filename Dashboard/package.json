@@ -1,0 +1,22 @@
+{
+  "name": "dashboard",
+  "version": "1.0.0",
+  "description": "Dashboard is an application designed to display features of the user's computer. For example, hard drive, RAM, name, time, battery charge, etc. are all available for display.",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JakeKo/Valence.git"
+  },
+  "author": "Jacob Koperski",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JakeKo/Valence/issues"
+  },
+  "homepage": "https://github.com/JakeKo/Valence/Dashboard#readme",
+  "dependencies": {
+    "electron": "^1.7.10"
+  }
+}
