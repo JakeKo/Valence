@@ -24,8 +24,10 @@ gulp.task("Dashboard-Stylus", () => {
 
 gulp.task("Dashboard-Typescript", () => {
 	gulp.src("./src/ts/*.ts")
-		.pipe(ts({ })).js
-		.pipe(minify({ }))
+		.pipe(typsecript({ })).js
+		.pipe(minify({
+			ext: ".js",
+		}))
 		.pipe(gulp.dest("./dist/js/"));
 });
 
@@ -50,6 +52,7 @@ gulp.task("Dashboard-HTML", () => {
 		.pipe(htmlmin({
 			useShortDoctype: true,
 			removeComments: true,
+			removeTagWhitespace: true,
 		}))
 		.pipe(gulp.dest("./dist/"));
 });
