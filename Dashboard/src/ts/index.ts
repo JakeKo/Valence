@@ -3,34 +3,23 @@ declare function require(value: string): any;
 const sysInfo = require("systeminformation");
 const weather = require("weather-js");
 
-const display = (string: string): void => {
-	document.getElementsByTagName("body")[0].innerHTML += `${string}<br>`;
-}
-
-const clear = (): void => {
-	document.getElementsByTagName("body")[0].innerHTML = "";
-}
-
 // BEGIN CLOCK MANAGEMENT
-const refreshTime = (): any => {
-	const padLeft = (value: number) => value < 10 ? `0${value}` : `${value}`;
-	const now: Date = new Date();
-
-	return {
-		hours: padLeft(now.getHours()),
-		minutes: padLeft(now.getMinutes()),
-		seconds: padLeft(now.getSeconds()),
-	};
-}
 
 const refreshClock = (): void => {
-	clear();
-	const time: any = refreshTime();
-	display(`${time.hours}:${time.minutes}:${time.seconds}`);
+	const time: Date = new Date();
+	const hours: number = time.getHours();
+	const minutes: number = time.getMinutes();
+	const seconds: number = time.getSeconds();
+
+	let clockString: string = `${hours}`;
+	clockString += seconds % 2 === 0 ? " " : ":";
+	clockString += minutes < 10 ? `0${minutes}` : `${minutes}`;
+
+	document.getElementsByClassName("clock")[0].innerHTML = clockString;
 }
 
-// refreshClock();
-// setInterval(refreshClock, 1000);
+refreshClock();
+setInterval(refreshClock, 1000);
 // END CLOCK MANAGEMENT
 
 // BEGIN SYSTEM INFORMATION
