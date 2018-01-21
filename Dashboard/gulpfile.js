@@ -27,6 +27,10 @@ gulp.task("Dashboard-Typescript", () => {
 		.pipe(typsecript({
 			noImplicitAny: true,
 			removeComments: true,
+			charset: "UTF8",
+			target: "ES2015",
+			moduleResolution: "classic",
+			module: "commonjs",
 		})).js
 		.pipe(minify({
 			ext: ".js",
@@ -63,7 +67,7 @@ gulp.task("Dashboard-HTML", () => {
 gulp.task("default", [
 	"Dashboard-Stylus",
 	"Dashboard-Typescript",
-	// "Dashboard-Images",
+	"Dashboard-Images",
 	// "Dashboard-Resources",
 	// "Dashboard-Server",
 	"Dashboard-HTML",
