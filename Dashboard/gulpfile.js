@@ -24,7 +24,10 @@ gulp.task("Dashboard-Stylus", () => {
 
 gulp.task("Dashboard-Typescript", () => {
 	gulp.src("./src/ts/*.ts")
-		.pipe(typsecript({ })).js
+		.pipe(typsecript({
+			noImplicitAny: true,
+			removeComments: true,
+		})).js
 		.pipe(minify({
 			ext: ".js",
 		}))
