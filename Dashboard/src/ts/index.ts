@@ -39,7 +39,7 @@ const updateWeather = (): void => {
 			document.getElementsByClassName("weather-current-location")[0].innerHTML = location.name.toUpperCase();
 
 			document.getElementsByClassName("weather-forecast")[0].innerHTML = "";
-			forecast.forEach((report: any): void => {
+			forecast.slice(2).forEach((report: any): void => {
 				document.getElementsByClassName("weather-forecast")[0].innerHTML +=
 				`<div class="weather-forecast-card">
 					<div class="weather-day-label">${report.shortday.toUpperCase()}</div>
